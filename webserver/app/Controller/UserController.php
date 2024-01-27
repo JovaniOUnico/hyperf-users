@@ -8,25 +8,20 @@ use Hyperf\HttpServer\Contract\RequestInterface;
 #[UserController]
 #[Middleware(AuthMiddleware::class)]
 
-class UserController extends AbstractController
-{
-  public function index(RequestInterface $request)
-  {
+class UserController extends AbstractController {
+  public function index(RequestInterface $request) {
     return User::get();
   }
 
-  public function show(string $id)
-  {
+  public function show(string $id) {
     return User::find($id);
   }
 
-  public function store(RequestInterface $request)
-  {
+  public function store(RequestInterface $request) {
     return User::create($request->all());
   }
 
-  public function delete(string $id)
-  {
+  public function delete(string $id) {
     return User::destroy($id);
   }
 }

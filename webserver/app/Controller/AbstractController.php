@@ -17,14 +17,13 @@ use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\HttpServer\Contract\ResponseInterface;
 use Psr\Container\ContainerInterface;
 
-abstract class AbstractController
-{
-    #[Inject]
-    protected ContainerInterface $container;
+abstract class AbstractController {
+  #[Inject]
+  protected ContainerInterface $container;
 
-    #[Inject]
-    protected RequestInterface $request;
+  #[Inject]
+  protected RequestInterface $request;
 
-    #[Inject]
-    protected ResponseInterface $response;
+  #[Inject]
+  protected ResponseInterface $response;
 }
