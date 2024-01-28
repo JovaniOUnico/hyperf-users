@@ -16,8 +16,8 @@ use Hyperf\HttpServer\Contract\RequestInterface;
 
 class AuthController extends AbstractController {
 
-    protected LoginRepositoryInterface $loginRepository;
-    protected ResponseInterface $response;
+  protected LoginRepositoryInterface $loginRepository;
+  protected ResponseInterface $response;
 
   public function __construct() {
     $this->loginRepository = new LoginRepository();

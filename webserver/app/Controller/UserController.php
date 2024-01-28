@@ -9,6 +9,7 @@ use Hyperf\HttpServer\Contract\RequestInterface;
 #[Middleware(AuthMiddleware::class)]
 
 class UserController extends AbstractController {
+
   public function index(RequestInterface $request) {
     return User::get();
   }
@@ -24,4 +25,5 @@ class UserController extends AbstractController {
   public function delete(string $id) {
     return User::destroy($id);
   }
+
 }
