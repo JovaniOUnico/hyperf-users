@@ -19,17 +19,15 @@ use Hyperf\Event\Annotation\Listener;
 use Hyperf\Event\Contract\ListenerInterface;
 
 #[Listener]
-class ResumeExitCoordinatorListener implements ListenerInterface
-{
-    public function listen(): array
-    {
-        return [
-            AfterExecute::class,
-        ];
-    }
+class ResumeExitCoordinatorListener implements ListenerInterface {
 
-    public function process(object $event): void
-    {
-        CoordinatorManager::until(Constants::WORKER_EXIT)->resume();
-    }
+  public function listen(): array {
+    return [
+      AfterExecute::class,
+    ];
+  }
+
+  public function process(object $event): void {
+    CoordinatorManager::until(Constants::WORKER_EXIT)->resume();
+  }
 }
